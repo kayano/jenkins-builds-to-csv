@@ -1,36 +1,37 @@
 # jenkins-builds-to-csv
 
-FIXME: description
+Jenkins keeps info about historical builds in build.xml files under
+jobs directory
+
+<pre>
++- jobs
+     +- [JOBNAME]      (sub directory for each job)
+         +- config.xml     (job configuration file)
+         +- latest         (symbolic link to the last successful build)
+         +- builds
+             +- [BUILD_ID]     (for each build)
+                 +- build.xml      (build result summary)
+                 +- log            (log file)
+                 +- changelog.xml  (change log)
+<pre>
+
+This tool extracts startTime, result, duration from all build.xml for
+all jobs into single file jobs/builds.csv
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Download from https://github.com/kayano/jenkins-builds-to-csv.git
+
+
+## Build
+
+    $ lein uberjar
 
 ## Usage
 
-FIXME: explanation
+    $ java -jar jenkins-builds-to-csv-0.1.0-standalone.jar <path-to-jenkins-jobs-dir>
 
-    $ java -jar jenkins-builds-to-csv-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
 
 ## License
 
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License, the same as Clojure
