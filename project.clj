@@ -9,4 +9,5 @@
                  [org.clojure/data.zip "0.1.2"]]
   :main ^:skip-aot jenkins-builds-to-csv.core
   :target-path "target/%s"
+  :jvm-opts ["-Xmx1g" "-server"]
   :profiles {:uberjar {:aot :all}})
